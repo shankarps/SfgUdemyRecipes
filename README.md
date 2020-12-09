@@ -4,5 +4,7 @@ This is a practice project based on an exercise given by Spring Framework Guru i
 
 This project uses several UI templates and other assets from the open source project - Spring Framework Pet Clinic (https://github.com/spring-projects/spring-petclinic)
 
+This project has Lombok annotations, which may cause compiler errors in IDEs. These errors can be avoided by installing Lombok plugin.
+
 recipe.jpg created by mathildakhoo available freely on @unsplash
  
