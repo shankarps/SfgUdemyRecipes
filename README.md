@@ -6,5 +6,4 @@ This project uses several UI templates and other assets from the open source pro
 
 This project has Lombok annotations, which may cause compiler errors in IDEs. These errors can be avoided by installing Lombok plugin.
 
-recipe.jpg created by mathildakhoo available freely on @unsplash
  

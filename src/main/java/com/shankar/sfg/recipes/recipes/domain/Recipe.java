@@ -8,6 +8,8 @@ import java.util.Set;
 
 @Data
 @Entity
+@Getter
+@Setter
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
