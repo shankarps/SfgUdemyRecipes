@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebMvcTest(IndexController.class)
-public class IndexControllerMVCTest {
+public class IndexControllerWebMVCTest {
 
     @Autowired
     MockMvc mockMvc;

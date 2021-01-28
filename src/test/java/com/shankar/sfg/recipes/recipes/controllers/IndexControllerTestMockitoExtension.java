@@ -20,7 +20,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class IndexControllerTest {
+class IndexControllerTestMockitoExtension {
 
     @Mock
     RecipeService recipeService;
