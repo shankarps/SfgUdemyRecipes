@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 @Entity
 @EqualsAndHashCode(exclude = {"recipe"})
 @NoArgsConstructor
+@ToString
 public class Ingredient {
 
     @Id
@@ -18,6 +19,7 @@ public class Ingredient {
     private BigDecimal amount;
 
     @ManyToOne
+    @ToString.Exclude
     private Recipe recipe;
 
     @OneToOne(fetch = FetchType.EAGER)

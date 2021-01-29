@@ -7,7 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.transaction.annotation.Transactional;
 
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -25,7 +28,11 @@ public class IndexControllerMockMVCTest {
     private MockMvc mockMvc;
 
     @Test
+    @Transactional
     public void testIndexControllerView() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/")).andExpect(status().isOk());
+        this.mockMvc.perform(MockMvcRequestBuilders
+                .get("/"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("My Recipes")));;
     }
 }
