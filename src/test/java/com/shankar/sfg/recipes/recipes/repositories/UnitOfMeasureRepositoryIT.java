@@ -3,7 +3,10 @@ package com.shankar.sfg.recipes.recipes.repositories;
 import com.shankar.sfg.recipes.recipes.controllers.IndexController;
 import com.shankar.sfg.recipes.recipes.domain.UnitOfMeasure;
 import jdk.nashorn.internal.ir.Optimistic;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,24 +26,28 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @DataJpaTest
-class UnitOfMeasureRepositoryIntegrationTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class UnitOfMeasureRepositoryIT {
 
     @Autowired
     UnitOfMeasureRepository unitOfMeasureRepository;
 
     @Test
+    @Order(3)
     @DirtiesContext
     void findByDescriptionTeaspoon() {
         Optional<UnitOfMeasure> uom = unitOfMeasureRepository.findByDescription("Teaspoon");
         assert("Teaspoon".equals(uom.get().getDescription()));
     }
     @Test
+    @Order(2)
     void findByDescriptionCup() {
         Optional<UnitOfMeasure> uom = unitOfMeasureRepository.findByDescription("Cup");
         assert("Cup".equals(uom.get().getDescription()));
     }
 
     @Test
+    @Order(1)
     void findByDescriptionUnknown() {
         Optional<UnitOfMeasure> uom = unitOfMeasureRepository.findByDescription("Random");
         assert(!uom.isPresent());

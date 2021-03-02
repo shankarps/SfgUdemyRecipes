@@ -7,12 +7,12 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 
 /**
- * @implNote This Test class tests the IndexController with a Http request.
+ * @implNote This Integration Test class tests the IndexController with a Http request.
  * This is a slow test, since the full server is started for this test.
  * @see IndexController
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class IndexControllerHttpTest {
+public class IndexControllerHttpIT {
     //Get the port randomly assigned to start the web application
     @LocalServerPort
     private int port;
